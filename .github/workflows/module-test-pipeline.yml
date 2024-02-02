@@ -1,6 +1,6 @@
 name: Provider Test Pipeline
 
-on: workflow_call
+on: push
 
 jobs:
   test:
