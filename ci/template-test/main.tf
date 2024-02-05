@@ -10,7 +10,7 @@ module "messaging_endpoint_1" {
   msg_vpn_name = "default"
   endpoint_type = "queue"
   endpoint_name = "testQ2"
-  queue_subscription_topics = ["foo/bar1", "foo/bar3"]
+  queue_subscription_topics = ["foo/bar1", "foo/bar2", "foo/bar3"]
   max_msg_size = 10
   jndi_queue_name = "jndi/q"
 }
@@ -41,5 +41,9 @@ module "te_template_1" {
   msg_vpn_name = "default"
   endpoint_type = "topic_endpoint_template"
   endpoint_name = "te"
+}
+
+output "queue" {
+  value = module.messaging_endpoint_1.queue
 }
 
