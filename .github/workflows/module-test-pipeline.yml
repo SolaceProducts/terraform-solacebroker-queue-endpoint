@@ -39,7 +39,7 @@ jobs:
 
       - name: Test module root on test broker
         run: |
-          pushd ci/module-ytest
+          pushd ci/module-test
           terraform init
           # Create
           terraform plan
