@@ -20,8 +20,8 @@ variable "endpoint_name" {
 }
 
 variable "queue_subscription_topics" {
-  description = "List of queue subscription topics. Only valid if endpoint ype is 'queue'."
-  type        = list(any)
+  description = "List of queue subscription topics. Only valid if endpoint type is 'queue'."
+  type        = list(string)
   default     = []
 }
 
