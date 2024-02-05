@@ -37,8 +37,4 @@ variable "jndi_topic_name" {
   default     = ""
 }
 
-variable "max_msg_size" {
-  description = "Max message size"
-  type        = number
-  default     = null
-}
+#AutoAddAttributes

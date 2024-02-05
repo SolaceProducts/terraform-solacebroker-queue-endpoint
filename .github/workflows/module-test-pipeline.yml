@@ -32,6 +32,17 @@ jobs:
           # Create
           terraform plan
           terraform apply -auto-approve
+          terraform plan | grep "No changes"
           sleep 1
           terraform destroy -auto-approve
           popd
+
+      - name: Test module root on test broker
+        run: |
+          terraform init
+          # Create
+          terraform plan
+          terraform apply -auto-approve
+          terraform plan | grep "No changes"
+          sleep 1
+          terraform destroy -auto-approve

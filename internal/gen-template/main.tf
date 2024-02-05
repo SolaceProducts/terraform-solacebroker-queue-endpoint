@@ -5,7 +5,8 @@ resource "solacebroker_msg_vpn_queue" "main" {
   queue_name      = var.endpoint_name
   ingress_enabled = true
   egress_enabled  = true
-  max_msg_size    = var.max_msg_size
+
+  #AutoAddAttributes #EnableCommonVariables
 }
 
 resource "solacebroker_msg_vpn_queue_subscription" "main" {
@@ -31,7 +32,9 @@ resource "solacebroker_msg_vpn_topic_endpoint" "main" {
   topic_endpoint_name      = var.endpoint_name
   ingress_enabled = true
   egress_enabled  = true
-  max_msg_size    = var.max_msg_size
+
+  #AutoAddAttributes #EnableCommonVariables #RenameVariables {"max_spool_usage": "max_msg_spool_usage"}
+
 }
 
 resource "solacebroker_msg_vpn_jndi_topic" "main" {
@@ -47,6 +50,8 @@ resource "solacebroker_msg_vpn_queue_template" "main" {
 
   msg_vpn_name    = var.msg_vpn_name
   queue_template_name      = var.endpoint_name
+
+  #AutoAddAttributes #EnableCommonVariables
 }
 
 resource "solacebroker_msg_vpn_topic_endpoint_template" "main" {
@@ -54,5 +59,7 @@ resource "solacebroker_msg_vpn_topic_endpoint_template" "main" {
 
   msg_vpn_name    = var.msg_vpn_name
   topic_endpoint_template_name      = var.endpoint_name
+
+  #AutoAddAttributes #EnableCommonVariables
 }
 
