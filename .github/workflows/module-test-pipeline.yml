@@ -39,6 +39,7 @@ jobs:
 
       - name: Test module root on test broker
         run: |
+          pushd ci/module-ytest
           terraform init
           # Create
           terraform plan
@@ -46,3 +47,4 @@ jobs:
           terraform plan | grep "No changes"
           sleep 1
           terraform destroy -auto-approve
+          popd
