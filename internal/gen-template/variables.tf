@@ -6,11 +6,11 @@ variable "msg_vpn_name" {
 }
 
 variable "endpoint_type" {
-  description = "Queue endpoint type"
+  description = "Queue endpoint type. Must be one of `queue`, `topic_endpoint`, `queue_template` or `topic_endpoint_template`."
   type        = string
   validation {
     condition     = contains(["queue", "topic_endpoint", "queue_template", "topic_endpoint_template"], var.endpoint_type)
-    error_message = "The endpoint_type must be one of 'queue', 'topic_endpoint', 'queue_template' or 'topic_endpoint_template'."
+    error_message = "The endpoint_type must be one of `queue`, `topic_endpoint`, `queue_template` or `topic_endpoint_template`."
   }
 }
 
@@ -20,7 +20,7 @@ variable "endpoint_name" {
 }
 
 variable "queue_subscription_topics" {
-  description = "List of queue subscription topics. Only valid if endpoint type is 'queue'."
+  description = "List of queue subscription topics. Only valid if endpoint type is `queue`."
   type        = list(string)
   default     = []
 }
