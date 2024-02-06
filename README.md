@@ -44,10 +44,13 @@ Refer to the following configuration examples:
 
 ## Module use recommendations
 
+This module is expected to be used primarily by application teams, it provides for provisioning endpoints required by the specific applications. It may be forked and updated with private defaults.
+
 ## Resources
 
 For more information about Solace technology in general please visit these resources:
 
+- Solace [Technical Documentation](https://docs.solace.com/)
 - The Solace Developer Portal website at: [solace.dev](//solace.dev/)
 - Understanding [Solace technology](//solace.com/products/platform/)
 - Ask the [Solace community](//dev.solace.com/community/).
