@@ -3,8 +3,8 @@ resource "solacebroker_msg_vpn_queue" "main" {
 
   msg_vpn_name    = var.msg_vpn_name
   queue_name      = var.endpoint_name
-  ingress_enabled = true
-  egress_enabled  = true
+  ingress_enabled = var.ingress_enabled
+  egress_enabled  = var.egress_enabled
 
   access_type                                   = var.access_type
   consumer_ack_propagation_enabled              = var.consumer_ack_propagation_enabled
@@ -58,8 +58,8 @@ resource "solacebroker_msg_vpn_topic_endpoint" "main" {
 
   msg_vpn_name        = var.msg_vpn_name
   topic_endpoint_name = var.endpoint_name
-  ingress_enabled     = true
-  egress_enabled      = true
+  ingress_enabled     = var.ingress_enabled
+  egress_enabled      = var.egress_enabled
 
   access_type                                   = var.access_type
   consumer_ack_propagation_enabled              = var.consumer_ack_propagation_enabled
@@ -73,7 +73,7 @@ resource "solacebroker_msg_vpn_topic_endpoint" "main" {
   max_delivered_unacked_msgs_per_flow           = var.max_delivered_unacked_msgs_per_flow
   max_msg_size                                  = var.max_msg_size
   max_redelivery_count                          = var.max_redelivery_count
-  max_spool_usage                               = var.max_msg_spool_usage
+  max_spool_usage                               = var.max_spool_usage
   max_ttl                                       = var.max_ttl
   owner                                         = var.owner
   permission                                    = var.permission

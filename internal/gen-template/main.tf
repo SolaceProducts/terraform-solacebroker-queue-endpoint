@@ -3,8 +3,8 @@ resource "solacebroker_msg_vpn_queue" "main" {
 
   msg_vpn_name    = var.msg_vpn_name
   queue_name      = var.endpoint_name
-  ingress_enabled = true
-  egress_enabled  = true
+  ingress_enabled = var.ingress_enabled
+  egress_enabled  = var.egress_enabled
 
   #AutoAddAttributes #EnableCommonVariables
 }
@@ -30,10 +30,10 @@ resource "solacebroker_msg_vpn_topic_endpoint" "main" {
 
   msg_vpn_name    = var.msg_vpn_name
   topic_endpoint_name      = var.endpoint_name
-  ingress_enabled = true
-  egress_enabled  = true
+  ingress_enabled = var.ingress_enabled
+  egress_enabled  = var.egress_enabled
 
-  #AutoAddAttributes #EnableCommonVariables #RenameVariables {"max_spool_usage": "max_msg_spool_usage"}
+  #AutoAddAttributes #EnableCommonVariables
 
 }
 

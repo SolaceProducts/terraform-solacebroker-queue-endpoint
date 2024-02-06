@@ -1,12 +1,12 @@
 # Input variable definitions
 
 variable "msg_vpn_name" {
-  description = "Message vpn name"
+  description = "The name of the Message VPN"
   type        = string
 }
 
 variable "endpoint_type" {
-  description = "Queue endpoint type. Must be one of `queue`, `topic_endpoint`, `queue_template` or `topic_endpoint_template`."
+  description = "The endpoint or template type. Must be one of `queue`, `topic_endpoint`, `queue_template` or `topic_endpoint_template`."
   type        = string
   validation {
     condition     = contains(["queue", "topic_endpoint", "queue_template", "topic_endpoint_template"], var.endpoint_type)
@@ -35,6 +35,18 @@ variable "jndi_topic_name" {
   description = "Name of the JNDI topic if provided"
   type        = string
   default     = ""
+}
+
+variable "ingress_enabled" {
+  description = "Enable or disable the reception of messages to the endpoint. The default value is `true`"
+  type        = bool
+  default     = true
+}
+
+variable "egress_enabled" {
+  description = "Enable or disable the transmission of messages from the endpoint. The default value is `true`"
+  type        = bool
+  default     = true
 }
 
 variable "access_type" {
@@ -143,6 +155,12 @@ variable "max_msg_spool_usage" {
 
 variable "max_redelivery_count" {
   description = "The maximum number of times the Queue will attempt redelivery of a message prior to it being discarded or moved to the DMQ."
+  type        = number
+  default     = null
+}
+
+variable "max_spool_usage" {
+  description = "The maximum message spool usage allowed by the Topic Endpoint, in megabytes (MB)."
   type        = number
   default     = null
 }
