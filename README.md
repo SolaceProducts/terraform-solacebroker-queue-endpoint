@@ -16,7 +16,14 @@ Endpoints and endpoint templates are specific to a Message VPN on the broker, th
 
 Another mandatory input variable is the type of the endpoint or template to be created. Only one type can be created at a time.
 
-Optional module variables are either shared by multiple types, or conditional to the type where incompatible variables will be ignored. For example, the `permission` variable is shared by all endpoint and template types but `queue_name_filter` is specific to the `queue_template` type and ignored for other types. The recommended approach to determine variable name mappings is to look up the endpoint or template resource's documentation for attribute names.
+Optional module variables are either shared by multiple types, or conditional to the type where incompatible variables will be ignored. For example, the `permission` variable is shared by all endpoint and template types but `queue_name_filter` is specific to the `queue_template` type and ignored for other types. The recommended approach to determine variable name mappings is to look up the endpoint or template resource's documentation for matching attribute names:
+
+| Resource name |
+|---------------|
+|[`queue`](https://registry.terraform.io/providers/SolaceProducts/solacebroker/latest/docs/resources/msg_vpn_queue#optional)|
+|[`topic_endpoint`](https://registry.terraform.io/providers/SolaceProducts/solacebroker/latest/docs/resources/msg_vpn_topic_endpoint#optional)|
+|[`queue_template`](https://registry.terraform.io/providers/SolaceProducts/solacebroker/latest/docs/resources/msg_vpn_queue_template#optional)|
+|[`topic_endpoint_template`](https://registry.terraform.io/providers/SolaceProducts/solacebroker/latest/docs/resources/msg_vpn_topic_endpoint_template#optional)|
 
 Most optional variables' default value is null. If they are not provided then the default for the related resource attribute will be configured on the broker.
 
