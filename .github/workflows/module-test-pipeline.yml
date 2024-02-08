@@ -27,6 +27,7 @@ jobs:
 
       - name: Test module from template on test broker
         run: |
+          ls -l ci/scripts
           ci/scripts/test-module.sh ci/template-test
 
       - name: Test module root on test broker
