@@ -26,15 +26,13 @@ The module `queue` output refers to the created queue.
 
 If you don't already have access to a broker, refer to the [Developers page](https://www.solace.dev/) to get started.
 
-### PubSub+ Broker Manager
-
-You can verify configuration changes using the [PubSub+ Broker Manager Web UI](https://docs.solace.com/Admin/Broker-Manager/PubSub-Manager-Overview.htm)
-
 ### Adjust Provider Configuration
 
 Adjust the [provider parameters](https://registry.terraform.io/providers/SolaceProducts/solacebroker/latest/docs#schema) in `main.tf` according to your broker. The example configuration shows settings for a local broker running in Docker.
 
 ### Create the resource
+
+Hint: You can verify configuration changes on the broker, before and after, using the [PubSub+ Broker Manager Web UI](https://docs.solace.com/Admin/Broker-Manager/PubSub-Manager-Overview.htm)
 
 Execute from this folder:
 
@@ -44,7 +42,7 @@ $ terraform plan
 $ terraform apply
 ```
 
-Run `terraform destroy` to clean up created resources.
+Run `terraform destroy` to clean up created resources when no longer needed.
 
 ## Additional Documentation
 
