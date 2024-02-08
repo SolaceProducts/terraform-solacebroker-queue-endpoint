@@ -15,7 +15,7 @@ The module also supports exposing a created queue or topic endpoint via JNDI for
 ### Required
 
 * `msg_vpn_name` - Endpoints and endpoint templates are specific to a Message VPN on the broker
-* `endpoint_type` - The type of the endpoint or template to be created. Only one type can be created at a time.
+* `endpoint_type` - The type of the endpoint or template to be created. Only one type is allowed at a time.
 * `endpoint_name` - The name of the endpoint or template to be created
 * `access_type` - Defines how consumers may be connected. For additional details, refer to the [Solace documentation](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Access_Types_..49)
 * `permission` - Queues or topic endpoints must have proper `owner` or `permission` for non-owners configured to enable clients to connect and consume messages. The user shall consider the security implications when choosing a value. For additional details, refer to the [Solace documentation](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Queue_Owners)
@@ -38,7 +38,7 @@ Most optional variables' default value is null. If they are not provided then th
 
 ## Module outputs
 
-Outputs provide a reference to created resources. Any resource that has not been created because will be set to `(null)`.
+Outputs provide references to created resources. Any reference for a resource that has not been created for an endpoint type will be set to `(null)`.
 
 ## Providers
 
@@ -77,7 +77,7 @@ Refer to the following configuration examples:
 
 ## Module use recommendations
 
-This module is expected to be used primarily by application teams. It provides support to provision endpoints required by a specific application. It may be forked and adjusted with private defaults.
+This module is expected to be used primarily by application teams. It supports provisioning endpoints or templates required by a specific application. It may be forked and adjusted with private defaults.
 
 ## Resources
 
