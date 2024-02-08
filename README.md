@@ -4,9 +4,9 @@ Terraform module to configure a "guaranteed messaging endpoint" or an "endpoint 
 
 This module supports the configuration of one of the followings:
 
-- a "queue" or a "topic endpoint": applications that make use of [Guaranteed Messaging](https://docs.solace.com/Messaging/Guaranteed-Msg/Guaranteed-Messages.htm), need [endpoints](https://docs.solace.com/Messaging/Guaranteed-Msg/Endpoints.htm) configured on the event broker to persist messages. A queue may also have a list of [topic subscriptions](https://docs.solace.com/API/API-Developer-Guide/Adding-Topic-Subscriptio.htm).
+- a "_queue_" or a "_topic endpoint_": applications that make use of [Guaranteed Messaging](https://docs.solace.com/Messaging/Guaranteed-Msg/Guaranteed-Messages.htm), need [endpoints](https://docs.solace.com/Messaging/Guaranteed-Msg/Endpoints.htm) configured on the event broker to persist messages. A queue may also have a list of [topic subscriptions](https://docs.solace.com/API/API-Developer-Guide/Adding-Topic-Subscriptio.htm).
 
-- a "queue template" or a "topic endpoint template": [Endpoint templates](https://docs.solace.com/Messaging/Guaranteed-Msg/Endpoint-Templates.htm?Highlight=Endpoint%20templates) may be used for new client created endpoints.
+- a "_queue template_" or a "_topic endpoint template_": [Endpoint templates](https://docs.solace.com/Messaging/Guaranteed-Msg/Endpoint-Templates.htm?Highlight=Endpoint%20templates) may be used for new client created endpoints.
 
 The module also supports exposing a created queue or topic endpoint via JNDI for JMS applications.
 
@@ -17,8 +17,8 @@ The module also supports exposing a created queue or topic endpoint via JNDI for
 * `msg_vpn_name` - Endpoints and endpoint templates are specific to a Message VPN on the broker
 * `endpoint_type` - The type of the endpoint or template to be created. Only one type is allowed at a time.
 * `endpoint_name` - The name of the endpoint or template to be created
-* `access_type` - Defines how consumers may be connected. For additional details, refer to the [Solace documentation](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Access_Types_..49)
-* `permission` - Queues or topic endpoints must have proper `owner` or `permission` for non-owners configured to enable clients to connect and consume messages. The user shall consider the security implications when choosing a value. For additional details, refer to the [Solace documentation](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Queue_Owners)
+* `access_type` - Defines how consumers may be connected. For additional details, refer to the [PubSub+ documentation](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Access_Types_..49)
+* `permission` - Queues or topic endpoints must have proper `owner` or `permission` for non-owners configured to enable clients to connect and consume messages. The user shall consider the security implications when choosing a value. For additional details, refer to the [PubSub+ documentation](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Queue_Owners)
 
 
 ### Optional

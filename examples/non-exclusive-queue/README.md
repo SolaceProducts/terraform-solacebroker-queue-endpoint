@@ -46,5 +46,5 @@ Run `terraform destroy` to clean up created resources when no longer needed.
 
 ## Additional Documentation
 
-Refer to the [Configuring Queues](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Queues) section in the Solace documentation.
+Refer to the [Configuring Queues](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Queues) section in the PubSub+ documentation.
 
