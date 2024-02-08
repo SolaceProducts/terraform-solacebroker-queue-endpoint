@@ -35,5 +35,5 @@ jobs:
 
       - name: Test examples
         run: |
-          for dir in examples/*; do (echo "$dir\n"; ci/scripts/test-module.sh "$dir"); done
+          for dir in examples/*; do (ci/scripts/test-module.sh "$dir"); done
           # ci/scripts/test-module.sh examples/non-exclusive-queue
