@@ -1,9 +1,6 @@
 # Input variable definitions
 
-variable "msg_vpn_name" {
-  description = "The name of the Message VPN"
-  type        = string
-}
+# Required variables
 
 variable "endpoint_type" {
   description = "The endpoint or template type. Must be one of `queue`, `topic_endpoint`, `queue_template` or `topic_endpoint_template`."
@@ -14,9 +11,46 @@ variable "endpoint_type" {
   }
 }
 
+variable "msg_vpn_name" {
+  description = "The name of the Message VPN"
+  type        = string
+}
+
 variable "endpoint_name" {
   description = "The name of the endpoint or template"
   type        = string
+}
+
+variable "access_type" {
+  description = "The access type for delivering messages to consumer flows bound to the endpoint. The allowed values and their meaning are: `exclusive` - Exclusive delivery of messages to the first bound consumer flow. `non-exclusive` - Non-exclusive delivery of messages to bound consumer flows in a round-robin (if partition count is zero) or partitioned (if partition count is non-zero) fashion."
+  type        = string
+  validation {
+    condition     = contains(["exclusive", "non-exclusive"], var.access_type)
+    error_message = "Access type must be either `exclusive` or `non-exclusive`."
+  }
+}
+
+variable "permission" {
+  description = "The permission level for all consumers of the endpoint, excluding the owner. The allowed values and their meaning are: `no-access` - Disallows all access. `read-only` - Read-only access to the messages. `consume` - Consume (read and remove) messages. `modify-topic` - Consume messages or modify the topic/selector. `delete` - Consume messages, modify the topic/selector or delete the Client created endpoint altogether."
+  type        = string
+  validation {
+    condition     = contains(["no-access", "read-only", "consume", "modify-topic", "delete"], var.permission)
+    error_message = "Permission must be one of `no-access`, `read-only`, `consume`, `modify-topic` or `delete`."
+  }
+}
+
+# Optional variables
+
+variable "ingress_enabled" {
+  description = "Enable or disable the reception of messages to the endpoint. The default value is `true`"
+  type        = bool
+  default     = true
+}
+
+variable "egress_enabled" {
+  description = "Enable or disable the transmission of messages from the endpoint. The default value is `true`"
+  type        = bool
+  default     = true
 }
 
 variable "queue_subscription_topics" {
@@ -35,24 +69,6 @@ variable "jndi_topic_name" {
   description = "Name of the JNDI topic if provided"
   type        = string
   default     = ""
-}
-
-variable "ingress_enabled" {
-  description = "Enable or disable the reception of messages to the endpoint. The default value is `true`"
-  type        = bool
-  default     = true
-}
-
-variable "egress_enabled" {
-  description = "Enable or disable the transmission of messages from the endpoint. The default value is `true`"
-  type        = bool
-  default     = true
-}
-
-variable "access_type" {
-  description = "The access type for delivering messages to consumer flows bound to the Queue."
-  type        = string
-  default     = null
 }
 
 variable "consumer_ack_propagation_enabled" {
@@ -192,12 +208,6 @@ variable "partition_rebalance_delay" {
 variable "partition_rebalance_max_handoff_time" {
   description = "The maximum time (in seconds) to wait before handing off a partition while rebalancing."
   type        = number
-  default     = null
-}
-
-variable "permission" {
-  description = "The permission level for all consumers of the Queue, excluding the owner."
-  type        = string
   default     = null
 }
 

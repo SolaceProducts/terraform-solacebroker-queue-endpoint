@@ -9,8 +9,8 @@ Configuration in this directory creates a [non-exclusive queue](https://docs.sol
 * `msg_vpn_name` - set to `default` in the example
 * `endpoint_type` - set to `queue`
 * `endpoint_name`
-
-While an optional input, `access_type` is set to `non-exclusive` to configure a non-exclusive queue.
+* `access_type` - set to `non-exclusive` to configure a non-exclusive queue
+* `permission` - set to `consume` to enable the receiver app to remove consumed messages from the queue 
 
 ### Optional Inputs
 
@@ -24,7 +24,7 @@ The module `queue` output refers to the created queue.
 
 ### Access to a PubSub+ broker
 
-If you don't already have access to a broker, refer to the [Developers page](https://www.solace.dev/) to get started.
+If you don't already have access to a broker, refer to the [Developers page](https://www.solace.dev/) for options to get started.
 
 ### Adjust Provider Configuration
 

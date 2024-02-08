@@ -3,10 +3,11 @@ resource "solacebroker_msg_vpn_queue" "main" {
 
   msg_vpn_name    = var.msg_vpn_name
   queue_name      = var.endpoint_name
+  access_type     = var.access_type
+  permission      = var.permission
   ingress_enabled = var.ingress_enabled
   egress_enabled  = var.egress_enabled
 
-  access_type                                   = var.access_type
   consumer_ack_propagation_enabled              = var.consumer_ack_propagation_enabled
   dead_msg_queue                                = var.dead_msg_queue
   delivery_count_enabled                        = var.delivery_count_enabled
@@ -24,7 +25,6 @@ resource "solacebroker_msg_vpn_queue" "main" {
   partition_count                               = var.partition_count
   partition_rebalance_delay                     = var.partition_rebalance_delay
   partition_rebalance_max_handoff_time          = var.partition_rebalance_max_handoff_time
-  permission                                    = var.permission
   redelivery_delay_enabled                      = var.redelivery_delay_enabled
   redelivery_delay_initial_interval             = var.redelivery_delay_initial_interval
   redelivery_delay_max_interval                 = var.redelivery_delay_max_interval
@@ -58,10 +58,11 @@ resource "solacebroker_msg_vpn_topic_endpoint" "main" {
 
   msg_vpn_name        = var.msg_vpn_name
   topic_endpoint_name = var.endpoint_name
+  access_type         = var.access_type
+  permission          = var.permission
   ingress_enabled     = var.ingress_enabled
   egress_enabled      = var.egress_enabled
 
-  access_type                                   = var.access_type
   consumer_ack_propagation_enabled              = var.consumer_ack_propagation_enabled
   dead_msg_queue                                = var.dead_msg_queue
   delivery_count_enabled                        = var.delivery_count_enabled
@@ -76,7 +77,6 @@ resource "solacebroker_msg_vpn_topic_endpoint" "main" {
   max_spool_usage                               = var.max_spool_usage
   max_ttl                                       = var.max_ttl
   owner                                         = var.owner
-  permission                                    = var.permission
   redelivery_delay_enabled                      = var.redelivery_delay_enabled
   redelivery_delay_initial_interval             = var.redelivery_delay_initial_interval
   redelivery_delay_max_interval                 = var.redelivery_delay_max_interval
@@ -103,8 +103,9 @@ resource "solacebroker_msg_vpn_queue_template" "main" {
 
   msg_vpn_name        = var.msg_vpn_name
   queue_template_name = var.endpoint_name
+  access_type         = var.access_type
+  permission          = var.permission
 
-  access_type                                   = var.access_type
   consumer_ack_propagation_enabled              = var.consumer_ack_propagation_enabled
   dead_msg_queue                                = var.dead_msg_queue
   delivery_delay                                = var.delivery_delay
@@ -118,7 +119,6 @@ resource "solacebroker_msg_vpn_queue_template" "main" {
   max_msg_spool_usage                           = var.max_msg_spool_usage
   max_redelivery_count                          = var.max_redelivery_count
   max_ttl                                       = var.max_ttl
-  permission                                    = var.permission
   queue_name_filter                             = var.queue_name_filter
   redelivery_delay_enabled                      = var.redelivery_delay_enabled
   redelivery_delay_initial_interval             = var.redelivery_delay_initial_interval
@@ -137,8 +137,9 @@ resource "solacebroker_msg_vpn_topic_endpoint_template" "main" {
 
   msg_vpn_name                 = var.msg_vpn_name
   topic_endpoint_template_name = var.endpoint_name
+  access_type                  = var.access_type
+  permission                   = var.permission
 
-  access_type                                   = var.access_type
   consumer_ack_propagation_enabled              = var.consumer_ack_propagation_enabled
   dead_msg_queue                                = var.dead_msg_queue
   delivery_delay                                = var.delivery_delay
@@ -151,7 +152,6 @@ resource "solacebroker_msg_vpn_topic_endpoint_template" "main" {
   max_msg_spool_usage                           = var.max_msg_spool_usage
   max_redelivery_count                          = var.max_redelivery_count
   max_ttl                                       = var.max_ttl
-  permission                                    = var.permission
   redelivery_delay_enabled                      = var.redelivery_delay_enabled
   redelivery_delay_initial_interval             = var.redelivery_delay_initial_interval
   redelivery_delay_max_interval                 = var.redelivery_delay_max_interval

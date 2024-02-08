@@ -29,8 +29,6 @@ Most optional variables' default value is null. If they are not provided then th
 
 -> The module defaults for `ingress_enabled` and `egress_enabled` are `true`, which differ from the resource attribute defaults.
 
--> Important: Queues or topic endpoints must have proper `owner` or `permission` for non-owners configured to enable clients to connect and consume messages. The default values restrict all access. For additional details, refer to the [Solace documentation](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Queue_Owners)
-
 ## Examples
 
 Refer to the following configuration examples:
