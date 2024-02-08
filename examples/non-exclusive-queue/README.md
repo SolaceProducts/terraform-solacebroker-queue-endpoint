@@ -2,15 +2,15 @@
 
 Configuration in this directory creates a [non-exclusive queue](https://docs.solace.com/Get-Started/message-exchange-patterns.htm#Point-to) on the PubSub+ event broker leveraging the Queue Endpoint Terraform module.
 
-## Module Use in the Example
+## Module Configuration in the Example
 
 ### Mandatory Inputs
 
 * `msg_vpn_name` - set to `default` in the example
 * `endpoint_type` - set to `queue`
-* `endpoint_name`
+* `endpoint_name` - set to `testQ` in the example
 * `access_type` - set to `non-exclusive` to configure a non-exclusive queue
-* `permission` - set to `consume` to enable the receiver app to remove consumed messages from the queue 
+* `permission` - set to `consume` to enable the receiver app to remove consumed messages from the queue
 
 ### Optional Inputs
 
