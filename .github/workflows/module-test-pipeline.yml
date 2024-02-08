@@ -27,26 +27,13 @@ jobs:
 
       - name: Test module from template on test broker
         run: |
-          pushd ci/template-test
-          terraform init
-          terraform validate
-          # Create
-          terraform plan
-          terraform apply -auto-approve
-          terraform plan | grep "No changes"
-          sleep 1
-          terraform destroy -auto-approve
-          popd
+          ci/scripts/test-module.sh ci/template-test
 
       - name: Test module root on test broker
         run: |
-          pushd ci/module-test
-          terraform init
-          terraform validate
-          # Create
-          terraform plan
-          terraform apply -auto-approve
-          terraform plan | grep "No changes"
-          sleep 1
-          terraform destroy -auto-approve
-          popd
+          ci/scripts/test-module.sh ci/module-test
+
+      - name: Test examples
+        run: |
+          for dir in examples/*; do (ci/scripts/test-module.sh "$dir"); done
+          ci/scripts/test-module.sh examples/non-exclusive-queue
