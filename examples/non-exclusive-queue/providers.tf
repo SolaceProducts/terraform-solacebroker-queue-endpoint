@@ -6,5 +6,4 @@ terraform {
       source = "registry.terraform.io/solaceproducts/solacebroker"
     }
   }
-  required_version = "~> 1.2"
 }
