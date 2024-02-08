@@ -27,7 +27,6 @@ jobs:
 
       - name: Test module from template on test broker
         run: |
-          ls -l ci/scripts
           ci/scripts/test-module.sh ci/template-test
 
       - name: Test module root on test broker
@@ -36,5 +35,5 @@ jobs:
 
       - name: Test examples
         run: |
-          for dir in examples/*; do (ci/scripts/test-module.sh "$dir"); done
-          ci/scripts/test-module.sh examples/non-exclusive-queue
+          for dir in examples/*; do (echo "$dir\n"; ci/scripts/test-module.sh "$dir"); done
+          # ci/scripts/test-module.sh examples/non-exclusive-queue
