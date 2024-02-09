@@ -1,14 +1,14 @@
-provider solacebroker {
-  username       = "admin"
-  password       = "admin"
-  url            = "http://localhost:8080"
+provider "solacebroker" {
+  username = "admin"
+  password = "admin"
+  url      = "http://localhost:8080"
 }
 
 module "exclusive_queue" {
   # update with the module location
   source = "../.."
 
-  msg_vpn_name = "default"
+  msg_vpn_name  = "default"
   endpoint_type = "queue"
   endpoint_name = "testEQ"
 
@@ -24,7 +24,7 @@ module "exclusive_queue" {
 }
 
 output "provisioned_queue" {
-  value = module.exclusive_queue.queue
+  value       = module.exclusive_queue.queue
   description = "The provisioned queue resource"
 }
 

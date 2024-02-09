@@ -1,6 +1,6 @@
-# Exclusive Queue Example
+# Partitioned Queue Example
 
-Configuration in this directory creates an [exclusive queue](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Access_Types_..49?Highlight=exclusive) on the PubSub+ event broker leveraging the Queue Endpoint Terraform module.
+Configuration in this directory creates a [partitioned queue](https://docs.solace.com/Messaging/Guaranteed-Msg/Queues.htm#partitioned-queues) on the PubSub+ event broker leveraging the Queue Endpoint Terraform module.
 
 ## Module Configuration in the Example
 
@@ -8,12 +8,16 @@ Configuration in this directory creates an [exclusive queue](https://docs.solace
 
 * `msg_vpn_name` - set to `default` in the example
 * `endpoint_type` - set to `queue`
-* `endpoint_name` - set to `testEQ` in the example
+* `endpoint_name` - set to `testPQ` in the example
 * `permission` - set to `consume` to enable the receiver app to remove consumed messages from the queue
 
 ### Optional Inputs
 
-The `access_type` module input variable defines if a queue is "exclusive" or "non-exclusive". The default is "exclusive", so the variable doesn't need to be strictly specified.
+A partitioned queue is a queue with "non-exclusive" access type and greater than zero partition count. Configuration details are provided in the [PubSub+ documentation](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#configure-partitioned-queues)
+
+* `access_type` module input variable must be set to "non-exclusive"
+* `partition_count` greater than zero partitionals needs to be specified
+* `partition_rebalance_delay` and `partition_rebalance_max_handoff_time` are additional optional configurations specifically related to partitioned queues
 
 Optional module input variables have the same name as the attributes of the underlying provider resource. If omitted then the default for the related resource attribute will be configured on the broker. For attributes and defaults, refer to the [documentation of "solacebroker_msg_vpn_queue"](https://registry.terraform.io/providers/SolaceProducts/solacebroker/latest/docs/resources/msg_vpn_queue#optional) resource.
 
