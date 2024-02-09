@@ -67,9 +67,9 @@ Refer to the following configuration examples:
     - [Exclusive queue](examples/exclusive-queue)
     - [Non-exclusive queue](examples/non-exclusive-queue)
     - [Exclusive queue](examples/partitioned-queue)
-    - [Queue with topic subscriptions](queue-with-topic-subscriptions)
-    - Queue with exposed JNDI
-- Queue template
+    - [Queue with topic subscriptions](examples/queue-with-topic-subscriptions)
+    - [Queue with exposed JNDI](examples/queue-with-jndi)
+- [Queue template](examples/queue-template)
 - Topic endpoint
     - Topic endpoint with exposed JNDI
 - Topic endpoint template
