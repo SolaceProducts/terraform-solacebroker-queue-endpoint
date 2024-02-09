@@ -12,7 +12,7 @@ module "queue_with_topic_subscriptions" {
   endpoint_type = "queue"
   endpoint_name = "testQS"
 
-  # permission "consume" enables messaging a messaging client to connect, read and consume messages to/from the queue
+  # permission "consume" enables a messaging client to connect, read and consume messages to/from the queue
   permission = "consume"
 
   # this will add the listed subscriptions to the queue

@@ -12,7 +12,7 @@ module "queue_with_jndi" {
   endpoint_type = "queue"
   endpoint_name = "testJQ"
 
-  # permission "consume" enables messaging a messaging client to connect, read and consume messages to/from the queue
+  # permission "consume" enables a messaging client to connect, read and consume messages to/from the queue
   permission = "consume"
 
   # if the "jndi_queue_name" input variable is defined then the queue will be exposed to JNDI under this name

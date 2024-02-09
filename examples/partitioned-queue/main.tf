@@ -12,7 +12,7 @@ module "partitioned_queue" {
   endpoint_type = "queue"
   endpoint_name = "testPQ"
 
-  # permission "consume" enables messaging a messaging client to connect, read and consume messages to/from the queue
+  # permission "consume" enables a messaging client to connect, read and consume messages to/from the queue
   permission = "consume"
 
   # access_type "exclusive" is the default queue access type. This variable needs to be specified here to configure a non-exclusive queue

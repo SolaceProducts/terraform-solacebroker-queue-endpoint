@@ -12,7 +12,7 @@ module "exclusive_queue" {
   endpoint_type = "queue"
   endpoint_name = "testEQ"
 
-  # permission "consume" enables messaging a messaging client to connect, read and consume messages to/from the queue
+  # permission "consume" enables a messaging client to connect, read and consume messages to/from the queue
   permission = "consume"
 
   # access_type "exclusive" is the default queue access type. While it has been specified here for clarity, it is not strictly required.

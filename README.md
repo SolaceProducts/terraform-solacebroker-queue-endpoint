@@ -70,9 +70,9 @@ Refer to the following configuration examples:
     - [Queue with topic subscriptions](examples/queue-with-topic-subscriptions)
     - [Queue with exposed JNDI](examples/queue-with-jndi)
 - [Queue template](examples/queue-template)
-- Topic endpoint
-    - Topic endpoint with exposed JNDI
-- Topic endpoint template
+- [Topic endpoint](examples/topic-endpoint)
+    - [Topic endpoint with exposed JNDI](examples/topic-endpoint-with-jndi)
+- [Topic endpoint template](examples/topic-endpoint-template)
 
 ## Module use recommendations
 

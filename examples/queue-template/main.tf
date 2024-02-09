@@ -12,7 +12,7 @@ module "queue_template" {
   endpoint_type = "queue_template"
   endpoint_name = "testQT"
 
-  # permission "consume" enables messaging a messaging client to connect, read and consume messages to/from the queue
+  # permission "consume" enables a messaging client to connect, read and consume messages to/from the queue
   permission = "consume"
 
   # example optional config for the queue template
