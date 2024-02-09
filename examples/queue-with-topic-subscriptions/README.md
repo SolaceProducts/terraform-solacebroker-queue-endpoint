@@ -1,6 +1,6 @@
-# Exclusive Queue Example
+# Queue with Topic Subsciptions Example
 
-Configuration in this directory creates an [exclusive queue](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Access_Types_..49?Highlight=exclusive) on the PubSub+ event broker leveraging the Queue Endpoint Terraform module.
+Configuration in this directory creates a [queue with topic subscriptions](https://docs.solace.com/API/API-Developer-Guide/Adding-Topic-Subscriptio.htm) on the PubSub+ event broker leveraging the Queue Endpoint Terraform module.
 
 ## Module Configuration in the Example
 
@@ -8,18 +8,22 @@ Configuration in this directory creates an [exclusive queue](https://docs.solace
 
 * `msg_vpn_name` - set to `default` in the example
 * `endpoint_type` - set to `queue`
-* `endpoint_name` - set to `testEQ` in the example
+* `endpoint_name` - set to `testQS` in the example
 * `permission` - set to `consume` in the example to enable the receiver app to remove consumed messages from the queue
 
 ### Optional Inputs
 
-The `access_type` module input variable defines if a queue is "exclusive" or "non-exclusive". The default is "exclusive", so the variable doesn't need to be strictly specified.
+A list of subscriptions to one or more topics may be specified for the queue. Topics may include [wildcards](https://docs.solace.com/Messaging/Wildcard-Charaters-Topic-Subs.htm). Additional configuration details are provided in the [PubSub+ documentation](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#configure-partitioned-queues).
+
+* `queue_subscription_topics`: the list of topics as strings to subscribe to. Omitting this parameter or an empty list means no subscription.
 
 Optional module input variables have the same name as the attributes of the underlying provider resource. If omitted then the default for the related resource attribute will be configured on the broker. For attributes and defaults, refer to the [documentation of "solacebroker_msg_vpn_queue"](https://registry.terraform.io/providers/SolaceProducts/solacebroker/latest/docs/resources/msg_vpn_queue#optional).
 
 ### Output
 
 The module `provisioned_queue` output refers to the created queue.
+
+The module `provisioned_queue_subscriptions` lists the created subscription resources for the queue.
 
 ## Running the Example
 
