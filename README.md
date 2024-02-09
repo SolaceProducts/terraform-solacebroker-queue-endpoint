@@ -10,7 +10,7 @@ This module supports the configuration of one of the followings:
 
 The module also supports exposing a created queue or topic endpoint via JNDI for JMS applications.
 
-Full details are provided in the [Examples](#example).
+Full details are provided in the [Examples](#examples).
 
 ## Module input variables
 
