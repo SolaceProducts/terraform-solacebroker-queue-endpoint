@@ -21,6 +21,12 @@ Optional module input variables have the same name as the attributes of the unde
 
 The module `provisioned_queue` output refers to the created queue.
 
+## Created resources
+
+This example will create following resources:
+
+* `solacebroker_msg_vpn_queue`
+
 ## Running the Example
 
 ### Access to a PubSub+ broker

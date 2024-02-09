@@ -23,7 +23,14 @@ Optional module input variables have the same name as the attributes of the unde
 
 The module `provisioned_queue` output refers to the created queue.
 
-The module `provisioned_queue_subscriptions` lists the created subscription resources for the queue.
+The module `provisioned_queue_subscriptions` output lists the created subscription resources for the queue.
+
+## Created resources
+
+This example will create following resources:
+
+* `solacebroker_msg_vpn_queue`
+* zero or more `solacebroker_msg_vpn_queue_subscription` resources, depending on the number of subscription topics provided
 
 ## Running the Example
 
