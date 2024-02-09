@@ -16,7 +16,7 @@ module "queue_with_jndi" {
   permission = "consume"
 
   # if the "jndi_queue_name" input variable is defined then the queue will be exposed to JNDI under this name
-  jndi_queue_name = "/jndi/testJQ"
+  jndi_queue_name = "/jndi/queue/testJQ"
 
   # ingress and egress are enabled by default in the module, no need to enable here
   # ingress_enabled = true
