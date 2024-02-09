@@ -19,7 +19,7 @@ Optional module input variables have the same name as the attributes of the unde
 
 ### Output
 
-The module `provisioned_queue_template` output refers to the created queue.
+The module `provisioned_queue_template` output refers to the created queue template.
 
 ## Created resources
 
