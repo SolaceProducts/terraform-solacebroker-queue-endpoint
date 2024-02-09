@@ -64,7 +64,7 @@ The following table shows the resources created for each `endpoint-type` value. 
 Refer to the following configuration examples:
 
 - Queue
-    - Exclusive queue
+    - [Exclusive queue](examples/exclusive-queue)
     - [Non-exclusive queue](examples/non-exclusive-queue)
     - Partitioned queue
     - Queue with topic subscriptions

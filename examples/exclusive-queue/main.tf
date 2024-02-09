@@ -4,19 +4,19 @@ provider solacebroker {
   url            = "http://localhost:8080"
 }
 
-module "non_exclusive_queue" {
+module "exclusive_queue" {
   # update with the module location
   source = "../.."
 
   msg_vpn_name = "default"
   endpoint_type = "queue"
-  endpoint_name = "testNEQ"
+  endpoint_name = "testEQ"
 
   # permission "consume" enables messaging a messaging client to connect, read and consume messages to/from the queue
   permission = "consume"
 
-  # access_type "exclusive" is the default queue access type. This variable needs to be specified here to configure a non-exclusive queue
-  access_type = "non-exclusive"
+  # access_type "exclusive" is the default queue access type. While it has been specified here for clarity, it is not strictly required.
+  access_type = "exclusive"
 
   # ingress and egress are enabled by default in the module, no need to enable here
   # ingress_enabled = true
@@ -24,7 +24,7 @@ module "non_exclusive_queue" {
 }
 
 output "provisioned_queue" {
-  value = module.non_exclusive_queue.queue
+  value = module.exclusive_queue.queue
   description = "The provisioned queue resource"
 }
 

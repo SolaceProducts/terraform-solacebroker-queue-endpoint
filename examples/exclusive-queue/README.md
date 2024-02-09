@@ -1,6 +1,6 @@
-# Non-exclusive Queue Example
+# Exclusive Queue Example
 
-Configuration in this directory creates a [non-exclusive queue](https://docs.solace.com/Get-Started/message-exchange-patterns.htm#Point-to) on the PubSub+ event broker leveraging the Queue Endpoint Terraform module.
+Configuration in this directory creates an [exclusive queue](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Access_Types_..49) on the PubSub+ event broker leveraging the Queue Endpoint Terraform module.
 
 ## Module Configuration in the Example
 
@@ -15,7 +15,7 @@ Configuration in this directory creates a [non-exclusive queue](https://docs.sol
 
 Optional module input variables have the same name and defaults if omitted, as the attributes of the underlying provider resource. Refer to the [documentation of "solacebroker_msg_vpn_queue"](https://registry.terraform.io/providers/SolaceProducts/solacebroker/latest/docs/resources/msg_vpn_queue#optional).
 
-The `access_type` module input variable defines if a queue is "exclusive" or "non-exclusive". This needs to be specified for a "non-exclusive" queue.
+The `access_type` module input variable defines if a queue is "exclusive" or "non-exclusive". The default is "exclusive", so the variable doesn't need to be strictly specified.
 
 ### Output
 
