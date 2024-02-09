@@ -37,7 +37,6 @@ module "queue_template_1" {
   msg_vpn_name = "default"
   endpoint_type = "queue_template"
   endpoint_name = "qt"
-  access_type = "exclusive"
   permission = "consume"
 }
 

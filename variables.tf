@@ -21,15 +21,6 @@ variable "endpoint_name" {
   type        = string
 }
 
-variable "access_type" {
-  description = "The access type for delivering messages to consumer flows bound to the endpoint. The allowed values and their meaning are: `exclusive` - Exclusive delivery of messages to the first bound consumer flow. `non-exclusive` - Non-exclusive delivery of messages to bound consumer flows in a round-robin (if partition count is zero) or partitioned (if partition count is non-zero) fashion."
-  type        = string
-  validation {
-    condition     = contains(["exclusive", "non-exclusive"], var.access_type)
-    error_message = "Access type must be either `exclusive` or `non-exclusive`."
-  }
-}
-
 variable "permission" {
   description = "The permission level for all consumers of the endpoint, excluding the owner. The allowed values and their meaning are: `no-access` - Disallows all access. `read-only` - Read-only access to the messages. `consume` - Consume (read and remove) messages. `modify-topic` - Consume messages or modify the topic/selector. `delete` - Consume messages, modify the topic/selector or delete the Client created endpoint altogether."
   type        = string
@@ -69,6 +60,12 @@ variable "jndi_topic_name" {
   description = "Name of the JNDI topic if provided"
   type        = string
   default     = ""
+}
+
+variable "access_type" {
+  description = "The access type for delivering messages to consumer flows bound to the Queue."
+  type        = string
+  default     = null
 }
 
 variable "consumer_ack_propagation_enabled" {

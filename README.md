@@ -17,8 +17,7 @@ The module also supports exposing a created queue or topic endpoint via JNDI for
 * `msg_vpn_name` - Endpoints and endpoint templates are specific to a Message VPN on the broker
 * `endpoint_type` - The type of the endpoint or template to be created. Only one type is allowed at a time.
 * `endpoint_name` - The name of the endpoint or template to be created
-* `access_type` - Defines how consumers may be connected. For additional details, refer to the [PubSub+ documentation](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Access_Types_..49)
-* `permission` - Queues or topic endpoints must have proper `owner` or `permission` for non-owners configured to enable clients to connect and consume messages. The user shall consider the security implications when choosing a value. For additional details, refer to the [PubSub+ documentation](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Queue_Owners)
+* `permission` - Queues or topic endpoints must have proper `owner` or `permission` for non-owners configured to enable clients to connect and consume messages. The user shall consider the security implications when choosing a value. For additional details, refer to the [PubSub+ documentation](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Permissions_for_Non-Owner_Clients_..57)
 
 
 ### Optional

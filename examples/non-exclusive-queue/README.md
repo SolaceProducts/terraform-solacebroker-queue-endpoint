@@ -9,12 +9,13 @@ Configuration in this directory creates a [non-exclusive queue](https://docs.sol
 * `msg_vpn_name` - set to `default` in the example
 * `endpoint_type` - set to `queue`
 * `endpoint_name` - set to `testQ` in the example
-* `access_type` - set to `non-exclusive` to configure a non-exclusive queue
 * `permission` - set to `consume` to enable the receiver app to remove consumed messages from the queue
 
 ### Optional Inputs
 
-Optional module input variables have the same name and defaults if omitted, as the attributes of the underlying provider resource. Refer to the [documentation of `solacebroker_msg_vpn_queue`](https://registry.terraform.io/providers/SolaceProducts/solacebroker/latest/docs/resources/msg_vpn_queue#optional).
+Optional module input variables have the same name and defaults if omitted, as the attributes of the underlying provider resource. Refer to the [documentation of "solacebroker_msg_vpn_queue"](https://registry.terraform.io/providers/SolaceProducts/solacebroker/latest/docs/resources/msg_vpn_queue#optional).
+
+The `access_type` module input variable defines if a queue is "exclusive" or "non-exclusive". The default is "non-exclusive", so the variable doesn't need to be strictly specified.
 
 ### Output
 

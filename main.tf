@@ -3,11 +3,11 @@ resource "solacebroker_msg_vpn_queue" "main" {
 
   msg_vpn_name    = var.msg_vpn_name
   queue_name      = var.endpoint_name
-  access_type     = var.access_type
   permission      = var.permission
   ingress_enabled = var.ingress_enabled
   egress_enabled  = var.egress_enabled
 
+  access_type                                   = var.access_type
   consumer_ack_propagation_enabled              = var.consumer_ack_propagation_enabled
   dead_msg_queue                                = var.dead_msg_queue
   delivery_count_enabled                        = var.delivery_count_enabled
@@ -58,11 +58,11 @@ resource "solacebroker_msg_vpn_topic_endpoint" "main" {
 
   msg_vpn_name        = var.msg_vpn_name
   topic_endpoint_name = var.endpoint_name
-  access_type         = var.access_type
   permission          = var.permission
   ingress_enabled     = var.ingress_enabled
   egress_enabled      = var.egress_enabled
 
+  access_type                                   = var.access_type
   consumer_ack_propagation_enabled              = var.consumer_ack_propagation_enabled
   dead_msg_queue                                = var.dead_msg_queue
   delivery_count_enabled                        = var.delivery_count_enabled
@@ -103,9 +103,9 @@ resource "solacebroker_msg_vpn_queue_template" "main" {
 
   msg_vpn_name        = var.msg_vpn_name
   queue_template_name = var.endpoint_name
-  access_type         = var.access_type
   permission          = var.permission
 
+  access_type                                   = var.access_type
   consumer_ack_propagation_enabled              = var.consumer_ack_propagation_enabled
   dead_msg_queue                                = var.dead_msg_queue
   delivery_delay                                = var.delivery_delay
@@ -137,9 +137,9 @@ resource "solacebroker_msg_vpn_topic_endpoint_template" "main" {
 
   msg_vpn_name                 = var.msg_vpn_name
   topic_endpoint_template_name = var.endpoint_name
-  access_type                  = var.access_type
   permission                   = var.permission
 
+  access_type                                   = var.access_type
   consumer_ack_propagation_enabled              = var.consumer_ack_propagation_enabled
   dead_msg_queue                                = var.dead_msg_queue
   delivery_delay                                = var.delivery_delay
