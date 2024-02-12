@@ -30,6 +30,13 @@ jobs:
         run: |
           find . -type d -print0 | xargs -0 -n1 terraform fmt
 
+      - name: Setup test broker
+        run: |
+          mkdir -p $HOME/solace; chmod 777 $HOME/solace
+          docker run -d -p 8080:8080 -p 55555:55555 --shm-size=1g --env username_admin_globalaccesslevel=admin --env username_admin_password=admin --env system_scaling_maxkafkabridgecount="10" --name=solace \
+            --env system_scaling_maxconnectioncount="1000" --mount type=bind,source=$HOME/solace,destination=/var/lib/solace,ro=false solace/solace-pubsub-standard:latest
+          while ! curl -s localhost:8080 | grep aurelia ; do sleep 1 ; done
+
       - name: Check code builds and pass acceptance test
         run: |
           ci/scripts/test-module.sh ci/module-test
