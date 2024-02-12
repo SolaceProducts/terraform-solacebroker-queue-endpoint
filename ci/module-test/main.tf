@@ -6,6 +6,7 @@ provider "solacebroker" {
 
 module "messaging_endpoint_1" {
   source = "../.."
+  # version = ""
 
   msg_vpn_name              = "default"
   endpoint_type             = "queue"
@@ -20,6 +21,7 @@ module "messaging_endpoint_1" {
 
 module "messaging_endpoint_2" {
   source = "../.."
+  # version = ""
 
   msg_vpn_name              = "default"
   endpoint_type             = "topic_endpoint"
@@ -33,6 +35,7 @@ module "messaging_endpoint_2" {
 
 module "queue_template_1" {
   source = "../.."
+  # version = ""
 
   msg_vpn_name  = "default"
   endpoint_type = "queue_template"
@@ -42,6 +45,7 @@ module "queue_template_1" {
 
 module "te_template_1" {
   source = "../.."
+  # version = ""
 
   msg_vpn_name  = "default"
   endpoint_type = "topic_endpoint_template"
