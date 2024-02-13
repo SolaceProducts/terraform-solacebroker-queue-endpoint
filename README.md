@@ -1,6 +1,6 @@
-# Solace PubSub+ Software Event Broker Queue Endpoint Terraform Module
+# Solace PubSub+ Software Event Broker Queues & Endpoints Terraform Module
 
-Terraform module to configure a "guaranteed messaging endpoint" or an "endpoint template" on the [Solace PubSub+ Event Broker](https://solace.com/products/event-broker/). Note: "queue endpoint" in the title also refers to all these types as a generic name. 
+Terraform module to configure a "guaranteed messaging endpoint" or an "endpoint template" on the [Solace PubSub+ Event Broker](https://solace.com/products/event-broker/). 
 
 This module supports the configuration of one of the followings:
 
@@ -68,7 +68,7 @@ Refer to the following configuration examples:
 - Queue
     - [Exclusive queue](examples/exclusive-queue)
     - [Non-exclusive queue](examples/non-exclusive-queue)
-    - [Exclusive queue](examples/partitioned-queue)
+    - [Partitioned queue](examples/partitioned-queue)
     - [Queue with topic subscriptions](examples/queue-with-topic-subscriptions)
     - [Queue with exposed JNDI](examples/queue-with-jndi)
 - [Queue template](examples/queue-template)
