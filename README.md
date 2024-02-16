@@ -33,13 +33,13 @@ Optional module variables are either shared by multiple types, or conditional to
 |[solacebroker_msg_vpn_queue_template](https://registry.terraform.io/providers/SolaceProducts/solacebroker/latest/docs/resources/msg_vpn_queue_template#optional)|
 |[solacebroker_msg_vpn_topic_endpoint_template](https://registry.terraform.io/providers/SolaceProducts/solacebroker/latest/docs/resources/msg_vpn_topic_endpoint_template#optional)|
 
-Most optional variables' default value is null. If they are not provided then the default for the related resource attribute will be configured on the broker.
+Most optional variables' default value is `null`, meaning that if not provided then the resource default value will be provisioned on the broker.
 
 -> The module defaults for `ingress_enabled` and `egress_enabled` optional variables are `true`, which differ from the resource attribute defaults.
 
 ## Module outputs
 
-Outputs provide references to created resources. Any reference for a resource that has not been created for an endpoint type will be set to `(null)`.
+[Module outputs](https://developer.hashicorp.com/terraform/language/values/outputs) provide reference to created resources. Any reference to a resource that has not been created will be set to `(null)`.
 
 ## Providers
 

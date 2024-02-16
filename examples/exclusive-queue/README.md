@@ -1,6 +1,6 @@
 # Exclusive Queue Example
 
-Configuration in this directory creates an [exclusive queue](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Access_Types_..49?Highlight=exclusive) on the PubSub+ event broker leveraging the Queue Endpoint Terraform module.
+Configuration in this directory creates an [exclusive queue](https://docs.solace.com/Messaging/Guaranteed-Msg/Configuring-Queues.htm#Configuring_Access_Types_..49?Highlight=exclusive) on the PubSub+ event broker leveraging the Queues & Endpoints Terraform module.
 
 ## Module Configuration in the Example
 
@@ -33,6 +33,15 @@ This example will create following resources:
 
 If you don't already have access to a broker, refer to the [Developers page](https://www.solace.dev/) for options to get started.
 
+### Sample source code
+
+The sample is available from the module GitHub repo:
+
+```bash
+git clone https://github.com/SolaceProducts/terraform-solacebroker-queue-endpoint.git
+cd examples/exclusive-queue
+```
+
 ### Adjust Provider Configuration
 
 Adjust the [provider parameters](https://registry.terraform.io/providers/SolaceProducts/solacebroker/latest/docs#schema) in `main.tf` according to your broker. The example configuration shows settings for a local broker running in Docker.
@@ -44,9 +53,9 @@ Hint: You can verify configuration changes on the broker, before and after, usin
 Execute from this folder:
 
 ```bash
-$ terraform init
-$ terraform plan
-$ terraform apply
+terraform init
+terraform plan
+terraform apply
 ```
 
 Run `terraform destroy` to clean up created resources when no longer needed.
