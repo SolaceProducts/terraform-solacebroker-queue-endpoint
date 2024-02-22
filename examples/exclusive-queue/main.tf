@@ -18,24 +18,13 @@ provider "solacebroker" {
   url      = "http://localhost:8080"
 }
 
-# resource "solacebroker_msg_vpn_queue" "exclusive_queue" {
-#   msg_vpn_name  = "default"
-#   queue_name = "testEQ"
+module "exclusive_queue" {
+  # update with the module location
+  source = "../.."
 
-#   # permission "consume" enables a messaging client to connect, read and consume messages to/from the queue
-#   permission = "delete"
-
-#   # access_type "exclusive" is the default queue access type. While it has been specified here for clarity, it is not strictly required.
-#   access_type = "exclusive"
-
-#   # ingress and egress are enabled by default in the module, no need to enable here
-#   # ingress_enabled = true
-#   # egress_enabled = true
-# }
-
-resource "solacebroker_msg_vpn_queue" "exclusive_queue2" {
   msg_vpn_name  = "default"
-  queue_name = "testEQ"
+  endpoint_type = "queue"
+  endpoint_name = "testEQ"
 
   # permission "consume" enables a messaging client to connect, read and consume messages to/from the queue
   permission = "consume"
@@ -46,5 +35,10 @@ resource "solacebroker_msg_vpn_queue" "exclusive_queue2" {
   # ingress and egress are enabled by default in the module, no need to enable here
   # ingress_enabled = true
   # egress_enabled = true
+}
+
+output "provisioned_queue" {
+  value       = module.exclusive_queue.queue
+  description = "The provisioned queue resource"
 }
 
