@@ -30,7 +30,7 @@ module "topic_endpoint_template" {
   # that has been created from the template
   permission = "consume"
 
-  # example optional config for the queue template
+  # example optional config for the topic endpoint template
   respect_ttl_enabled = true
 }
 
