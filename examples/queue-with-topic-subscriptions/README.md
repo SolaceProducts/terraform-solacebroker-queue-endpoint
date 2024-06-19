@@ -1,4 +1,4 @@
-# Queue with Topic Subsciptions Example
+# Queue with Topic Subscriptions Example
 
 Configuration in this directory creates a [queue with topic subscriptions](https://docs.solace.com/API/API-Developer-Guide/Adding-Topic-Subscriptio.htm) on the PubSub+ event broker leveraging the Queues & Endpoints Terraform module.
 
