@@ -2,7 +2,7 @@
 
 Configuration in this directory creates a [topic endpoint that is also exposed as a JNDI administered object](https://docs.solace.com/API/Solace-JMS-API/Managing-Solace-JNDI-Objects.htm) on the PubSub+ event broker leveraging the Queues & Endpoints Terraform module.
 
-Note that exposing topics as JNDI objects requires that you enable JNDI at the Message VPN level and configure a connection factory. You can use the [Service Module](TODO:add link) and the [JNDI Connection Factory Module](TODO:add link) to perform these tasks. This module will not check if the requirements are in place, however, if they aren't the configuration will fail.
+Note that exposing topics as JNDI objects requires that you enable JNDI at the Message VPN level and configure a connection factory. You can use the [Service Module](https://registry.terraform.io/modules/SolaceProducts/service/solacebroker/latest) and the [JNDI Connection Factory Module](https://registry.terraform.io/modules/SolaceProducts/jndi/solacebroker/latest) to perform these tasks. This module will not check if the requirements are in place, however, if they aren't the configuration will fail.
 
 ## Module Configuration in the Example
 
