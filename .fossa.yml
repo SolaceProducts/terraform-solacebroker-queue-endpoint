@@ -1,0 +1,25 @@
+version: 3
+
+project:
+  locator: SolaceProducts_terraform-solacebroker-queue-endpoint
+  id: SolaceProducts_terraform-solacebroker-queue-endpoint
+  name: terraform-solacebroker-queue-endpoint
+  teams: []
+  labels:
+    - terraform
+
+vendoredDependencies:
+  forceRescans: false
+  scanMethod: CLILicenseScan
+  licenseScanPathFilters:
+    exclude:
+      - "./.git"
+      - "./.github"
+
+paths:
+  exclude:
+    - ./.git
+    - ./.github
+
+telemetry:
+  scope: full
